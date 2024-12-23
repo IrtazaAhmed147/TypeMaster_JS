@@ -55,7 +55,7 @@ function initType() {
       wpm  = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm
       wpmTag.innerHTML = `wpm: ${wpm.toFixed(0)}`
       accuracyTag.innerHTML = `Accuracy: ${acc.toFixed(0)}%`
-      mistakeTag.innerHTML = `mistakes: ${mistakes}`
+      mistakeTag.innerHTML = `Mistakes: <span class="red">${mistakes}</span>`
     } else {
       input.value = ''
       clearInterval(timer)
@@ -67,7 +67,7 @@ function initType() {
 function initTimer () {
   if(timeLeft > 0) {
     timeLeft--
-    timeTag.innerHTML = `Timeleft: ${timeLeft}s`
+    timeTag.innerHTML = `${timeLeft}s`
   } else {
     clearInterval(timer)
   }
@@ -92,7 +92,7 @@ btn.addEventListener('click', function () {
   timeLeft = maxTime
   wpmTag.innerHTML = `wpm: 0`
   accuracyTag.innerHTML = `Accuracy: 0%`
-  mistakeTag.innerHTML = `mistakes: 0`
-  timeTag.innerHTML = `Timeleft: ${maxTime}s`
+  mistakeTag.innerHTML = `Mistakes: <span class="red">0</span>`
+  timeTag.innerHTML = `${maxTime}s`
   
 })

@@ -5,29 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Typing Speed</title>
+    <title>Typing Test</title>
 </head>
 
 <body>
     <div class="container">
 
-
-        <p id="text">
-            The Mysterious Forest: The dense forest stretched as far as the eye could see, its towering trees whispering
-            in the wind. Beneath the canopy, the air was thick with moisture and the scent of damp earth. Every now and
-            then, the sound of a distant animal echoed through the trees, but there was an unsettling quietness that
-            seemed to hang in the air.
-        </p>
+        <h1>Typing Test</h1>
+        <p id="text"></p>
         <div class="inputBox">
 
             <input type="text" id="input">
             <button id="tryagain">Try Again</button>
         </div>
         <div class="box">
-            <span id="wpm" class="aa">wpm: 0</span>
-            <span id="mistakes" class="aa">mistakes: 0</span>
-            <span id="acc" class="aa"> Accuracy: 0%</span>
-            <span id="time" class="aa"> Timeleft: 60s</span>
+            <div >
+
+                <p id="wpm" class="aa">wpm: 0</p>
+                <p id="acc" class="aa"> Accuracy: 0%</p>
+                <p id="mistakes" class="aa">Mistakes: <span class="red">0</span></p>
+            </div>
+            <p id="time" class="aa yellow" >60s</p>
         </div>
     </div>
     
