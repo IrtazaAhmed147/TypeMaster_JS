@@ -9,6 +9,7 @@ let timer,
 maxTime = 60,
 timeLeft = maxTime,
 charIndex = mistakes = isTyping = 0
+let wpm = accuracy = acc = 0
 
 function randomParagraph() {
   let randomPara = Math.floor(Math.random() * paragraphs.length)
@@ -46,13 +47,14 @@ function initType() {
         charIndex++
         
       }
-      let wpm = (charIndex - mistakes) / 5 / ((maxTime - timeLeft) / 60 )  
+       wpm = (charIndex - mistakes) / 5 / ((maxTime - timeLeft) / 60 )  
      
-      let accuracy = charIndex === 0 ? 100 : ((charIndex - mistakes) / charIndex) * 100;
+     accuracy = charIndex === 0 ? 100 : ((charIndex - mistakes) / charIndex) * 100;
+       acc = accuracy < 0 ? 0 : accuracy
 
       wpm  = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm
       wpmTag.innerHTML = `wpm: ${wpm.toFixed(0)}`
-      accuracyTag.innerHTML = `Accuracy: ${accuracy.toFixed(0)}%`
+      accuracyTag.innerHTML = `Accuracy: ${acc.toFixed(0)}%`
       mistakeTag.innerHTML = `mistakes: ${mistakes}`
     } else {
       input.value = ''
@@ -76,15 +78,21 @@ randomParagraph()
 btn.addEventListener('click', function () {
   input.value = ''
   clearInterval(timer)
-  try {
+  
     
     randomParagraph()
-  } catch (error) {
-      console.log(error)
-  }
+  
+  isTyping = false
+  wpm = 0 
+  accuracy = 0
+  acc = 0
+  maxTime = 60
+  charIndex = 0
+  mistakes = 0
+  timeLeft = maxTime
   wpmTag.innerHTML = `wpm: 0`
   accuracyTag.innerHTML = `Accuracy: 0%`
   mistakeTag.innerHTML = `mistakes: 0`
-  timeTag.innerHTML = `Timeleft: 0s`
+  timeTag.innerHTML = `Timeleft: ${maxTime}s`
   
 })

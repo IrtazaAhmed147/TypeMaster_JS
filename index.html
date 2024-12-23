@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Typing Speed</title>
 </head>
-<body>
-    
-    <p id="text"></p>
 
-    <input type="text" id="input">
-    <div>
-        <p>
-            <span id="wpm">WPM: 0,</span>
-            <span id="mistakes">mistakes: 0</span>
-            <span id="acc"> Accuracy: 0%,</span> <span id="time"> Timeleft: 60s</span>
+<body>
+    <div class="container">
+
+
+        <p id="text">
+            The Mysterious Forest: The dense forest stretched as far as the eye could see, its towering trees whispering
+            in the wind. Beneath the canopy, the air was thick with moisture and the scent of damp earth. Every now and
+            then, the sound of a distant animal echoed through the trees, but there was an unsettling quietness that
+            seemed to hang in the air.
         </p>
-        <button id="tryagain">Try Again</button>
+        <div class="inputBox">
+
+            <input type="text" id="input">
+            <button id="tryagain">Try Again</button>
+        </div>
+        <div class="box">
+            <span id="wpm" class="aa">wpm: 0</span>
+            <span id="mistakes" class="aa">mistakes: 0</span>
+            <span id="acc" class="aa"> Accuracy: 0%</span>
+            <span id="time" class="aa"> Timeleft: 60s</span>
+        </div>
     </div>
+    
 
     <script src="./paragraph.js"></script>
     <script src="./app.js"></script>
 </body>
+
 </html>
